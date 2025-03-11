@@ -5,7 +5,7 @@ import Database from "better-sqlite3";
 export const auth = betterAuth({
     database: new Database("./sqlite.db"),
     trustedOrigins: [
-        "https://koyu.space",
+        "http://127.0.0.1:3000",
         "https://koyu.space"
     ],
     emailAndPassword: {
