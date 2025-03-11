@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/card"
 
 import Link from "next/link";
-import { Input } from "@/components/ui/input";
 import authClient from "@/lib/api";
 
 export default function Login() {
