@@ -2,14 +2,15 @@ FROM oven/bun:latest AS builder
 
 WORKDIR /app
 
-COPY package.json bun.lock .
+RUN apt update && apt install -y python3 build-essential
 
-RUN bun install
+COPY package.json bun.lockb .
+
+RUN bun install && npm rebuild better-sqlite3
 
 COPY . .
 
 RUN bun run build
-
 
 FROM oven/bun:latest AS runner
 
@@ -21,7 +22,5 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
 
 EXPOSE 3000
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
 
 CMD ["bun", "run", "start"]
