@@ -1,0 +1,15 @@
+{
+    "client_id": "http://127.0.0.1:3000/api/client-metadata.json",
+    "client_name": "koyu.space",
+    "client_uri": "http://127.0.0.1:3000",
+    "logo_uri": "http://127.0.0.1:3000/pb-icon_rendered.png",
+    "tos_uri": "http://127.0.0.1:3000/tos",
+    "policy_uri": "http://127.0.0.1:3000/policy",
+    "redirect_uris": ["http://127.0.0.1:3000/callback"],
+    "scope": "atproto",
+    "grant_types": ["authorization_code", "refresh_token"],
+    "response_types": ["code"],
+    "token_endpoint_auth_method": "none",
+    "application_type": "web",
+    "dpop_bound_access_tokens": true
+}

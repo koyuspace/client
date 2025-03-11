@@ -4,6 +4,7 @@
     "": {
       "name": "koyuspace",
       "dependencies": {
+        "@mynaui/icons-react": "^0.3.3",
         "@radix-ui/react-slot": "^1.1.2",
         "@types/better-sqlite3": "^7.6.12",
         "better-auth": "^1.2.3",
@@ -108,6 +109,8 @@
     "@img/sharp-win32-x64": ["@img/sharp-win32-x64@0.33.5", "", { "os": "win32", "cpu": "x64" }, "sha512-MpY/o8/8kj+EcnxwvrP4aTJSWw/aZ7JIGR4aBeZkZw5B7/Jn+tY9/VNwtcoGmdT7GfggGIU4kygOMSbYnOrAbg=="],
 
     "@levischuck/tiny-cbor": ["@levischuck/tiny-cbor@0.2.11", "", {}, "sha512-llBRm4dT4Z89aRsm6u2oEZ8tfwL/2l6BwpZ7JcyieouniDECM5AqNgr/y08zalEIvW3RSK4upYyybDcmjXqAow=="],
+
+    "@mynaui/icons-react": ["@mynaui/icons-react@0.3.3", "", { "dependencies": { "prop-types": "^15.8.1" }, "peerDependencies": { "react": "^16.5.1 || ^17.0.0 || ^18.0.0" } }, "sha512-vUA7T9xlPrFrXnApTb5Jdm9rbFKpENAL4cgXEmY+CpWOth+y4vdmw2gp3xGJ4Fhjpw+N4WH+yErHIoNzUD9HhA=="],
 
     "@next/env": ["@next/env@15.2.2", "", {}, "sha512-yWgopCfA9XDR8ZH3taB5nRKtKJ1Q5fYsTOuYkzIIoS8TJ0UAUKAGF73JnGszbjk2ufAQDj6mDdgsJAFx5CLtYQ=="],
 
