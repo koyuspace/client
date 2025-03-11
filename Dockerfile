@@ -6,7 +6,7 @@ RUN apt update && apt install -y python3 build-essential
 
 COPY package.json bun.lock .
 
-RUN bun install && npm rebuild better-sqlite3
+RUN bun install
 
 COPY . .
 
