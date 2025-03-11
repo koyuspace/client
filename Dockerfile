@@ -4,7 +4,7 @@ WORKDIR /app
 
 RUN apt update && apt install -y python3 build-essential
 
-COPY package.json bun.lockb .
+COPY package.json bun.lock .
 
 RUN bun install && npm rebuild better-sqlite3
 
