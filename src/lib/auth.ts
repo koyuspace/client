@@ -5,7 +5,7 @@ import Database from "better-sqlite3";
 export const auth = betterAuth({
     database: new Database("./sqlite.db"),
     trustedOrigins: [
-        "http://127.0.0.1:3000",
+        "https://koyu.space",
         "https://koyu.space"
     ],
     emailAndPassword: {
@@ -14,12 +14,12 @@ export const auth = betterAuth({
     plugins: [
         genericOAuth({config: [{
             providerId: "koyuspace",
-            clientId: "http://127.0.0.1:3000/client-metadata.json",
+            clientId: "https://koyu.space/client-metadata.json",
             clientSecret: "secret",
             authorizationUrl: "https://koyu.space/oauth/authorize",
             tokenUrl: "https://koyu.space/oauth/token",
             scopes: ["atproto"],
-            redirectURI: "http://127.0.0.1:3000/callback"
+            redirectURI: "https://koyu.space/callback"
         }]})
     ]
 })

@@ -32,7 +32,7 @@ export default function Login() {
                         console.log(response);
                     }} />
                     <br /><br />
-                    <p className="text-xs mt-2"><Link href="/register">Register</Link> | <Link href="/forgot">Forgot password?</Link></p>
+                    <p className="text-xs mt-2"><Link href="" className="cursor-not-allowed">Register</Link> | <Link href="" className="cursor-not-allowed">Forgot password?</Link></p>
                     <p><a href="https://web.koyu.space" className="text-xs mt-2">Looking for koyu&#39;s personal website?</a></p>
                 </CardContent>
             </Card>

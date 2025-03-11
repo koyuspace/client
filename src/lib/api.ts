@@ -5,7 +5,7 @@ const authClient = createAuthClient({
     plugins: [
         genericOAuthClient()
     ],
-    baseURL: "http://127.0.0.1:3000"
+    baseURL: "https://koyu.space"
 })
 
 export default authClient;
