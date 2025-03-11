@@ -1,6 +1,8 @@
 services:
   app:
-    build: .
+    #build: .
+    image: ghcr.io/koyuspace/client:latest
+    container_name: koyuspace-client
     ports:
       - "3030:3030"
     environment:
