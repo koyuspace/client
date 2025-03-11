@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3030:3030"
+    environment:
+      - HOSTNAME=0.0.0.0
+      - PORT=3030
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: unless-stopped
