@@ -28,7 +28,7 @@ export default function Callback() {
             </CardContent>
             <CardFooter>
                 <Button onClick={(e) => {
-                    window.navigator.clipboard.writeText(searchParamsJson);
+                    window.navigator.clipboard.writeText("```json\n"+searchParamsJson+"\n```");
                     const button = e.currentTarget;
                     button.textContent = "Copied!";
                     setTimeout(() => button.textContent = "Copy to Clipboard", 1500);

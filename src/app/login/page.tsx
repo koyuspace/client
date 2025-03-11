@@ -23,8 +23,8 @@ export default function Login() {
                 <CardContent className="text-center">
                     <p>Sign in with your koyu.space account to get started</p>
                     <br />
-                    <Input type="text" placeholder="@handle.tld" id="handle" className="lg:w-1/2 mx-auto" required={true} />
-                    <br />
+                    {/*<Input type="text" placeholder="@handle.tld" id="handle" className="lg:w-1/2 mx-auto" required={true} />
+                    <br />*/}
                     <LogoButton text="Sign in with koyu.space" id="login" onClick={async () => {
                         const response = await authClient.signIn.oauth2({
                             providerId: "koyuspace",
