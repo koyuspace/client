@@ -2,13 +2,16 @@ FROM oven/bun:latest AS builder
 
 WORKDIR /app
 
-# Install build dependencies with specific versions
+# Install Node.js and build dependencies
 RUN apt update && apt install -y \
     python3 \
     build-essential \
     sqlite3 \
     libsqlite3-dev \
-    node-gyp
+    curl \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt install -y nodejs \
+    && npm install -g node-gyp
 
 # Copy package files
 COPY package.json bun.lock ./
