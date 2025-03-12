@@ -36,3 +36,9 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/${{ github.repository }}:latest
+          build-args: |
+            BUN_PLATFORM=linux-arm64
+            NODE_ARCH=arm64
+            BUILDPLATFORM=${{matrix.platform}}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

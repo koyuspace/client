@@ -1,5 +1,10 @@
 FROM oven/bun:latest AS builder
 
+# Add build arguments
+ARG BUN_PLATFORM
+ARG NODE_ARCH
+ARG BUILDPLATFORM
+
 WORKDIR /app
 
 # Install Node.js and build dependencies
@@ -16,14 +21,15 @@ RUN apt update && apt install -y \
 # Copy package files
 COPY package.json bun.lock ./
 
-# Install dependencies
-RUN bun install
+# Install dependencies with platform-specific flags
+RUN BUN_PLATFORM=${BUN_PLATFORM} bun install
 
 # Copy source files
 COPY . .
 
-# Force rebuild of better-sqlite3 with node-gyp
+# Rebuild native modules with correct architecture
 RUN cd node_modules/better-sqlite3 && \
+    BUN_PLATFORM=${BUN_PLATFORM} npm rebuild --target_arch=${NODE_ARCH} && \
     npm run build-release
 
 # Build the application
@@ -47,5 +53,6 @@ COPY --from=builder /app/package.json ./package.json
 EXPOSE 3030
 ENV HOSTNAME="0.0.0.0"
 ENV PORT=3030
+ENV BUN_PLATFORM=${BUN_PLATFORM}
 
 CMD ["bun", "run", "start"]
